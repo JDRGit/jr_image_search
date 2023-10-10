@@ -25,7 +25,6 @@ const App = () => {
           import.meta.env.VITE_API_KEY
         }`
       );
-      console.log('data', data);
       setImages(data.results);
       setTotalPages(data.total_pages);
     } catch (error) {
@@ -40,7 +39,6 @@ const App = () => {
 
   const handleSearch = (event) => {
     event.preventDefault();
-    console.log(searchInput.current.value);
     resetSearch();
   };
 
@@ -49,19 +47,18 @@ const App = () => {
     resetSearch();
   };
 
-  console.log('page', page);
-
   return (
     <div className='container'>
-      <h1 className='title'>Image Search</h1>
+      <h1 className='title'>JR's Image Search</h1>
       <div className='search-section'>
-        <Form onSubmit={handleSearch}>
+        <Form onSubmit={handleSearch} className="search-wrapper">
           <Form.Control
             type='search'
             placeholder='Type something to search...'
             className='search-input'
             ref={searchInput}
           />
+          <Button type="submit" className="search-button">Search</Button>
         </Form>
       </div>
       <div className='filters'>

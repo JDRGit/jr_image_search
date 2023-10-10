@@ -19,8 +19,6 @@ body {
   color: var(--primary-color);
 }
 
-/* common css starts */
-
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -66,30 +64,46 @@ body {
   font-size: 20px;
 }
 
-/* common css ends */
-
-/* search section starts */
-
+/* Search Section */
 .search-section {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: var(--default-margin);
+  gap: var(--default-spacing);
 }
 
-.search-section .search-input {
+.search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding-right: 70px;
   min-width: 500px;
   padding: var(--default-spacing);
 }
 
-.search-section .search-btn {
-  margin-left: var(--default-spacing);
+.search-button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
-/* search section ends */
+.search-button:hover {
+  background-color: #6565d4;
+}
 
-/* filters section starts */
-
+/* Filters Section */
 .filters {
   display: flex;
   justify-content: center;
@@ -107,10 +121,7 @@ body {
   cursor: pointer;
 }
 
-/* filters section ends */
-
-/* images section starts */
-
+/* Images Section */
 .images {
   margin-top: var(--medium-margin);
   display: grid;
@@ -133,8 +144,6 @@ body {
 .images .image:hover {
   transform: translateY(-3px);
 }
-
-/* images section ends */
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
